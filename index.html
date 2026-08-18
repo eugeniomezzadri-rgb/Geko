@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Geco vs Mosca - Animazione Realistica</title>
+<title>Geco dell'Isola d'Elba vs Insetti</title>
 <style>
 * {
     margin: 0;
@@ -16,7 +16,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #010101;
+    background: #0d0d0f;
     font-family: sans-serif;
 }
 
@@ -32,9 +32,9 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(20, 20, 20, 0.75);
-    border: 1px solid rgba(91, 133, 66, 0.7);
-    color: #aae070;
+    background: rgba(25, 22, 18, 0.85);
+    border: 1px solid rgba(160, 140, 115, 0.5);
+    color: #e0cca8;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -42,12 +42,12 @@ body {
     cursor: pointer;
     user-select: none;
     outline: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
     transition: background 0.2s ease, transform 0.15s ease;
 }
 
 #audio-btn:hover {
-    background: rgba(35, 35, 35, 0.9);
+    background: rgba(45, 40, 32, 0.95);
     transform: scale(1.08);
 }
 
@@ -70,6 +70,7 @@ body {
     text-align: center;
     line-height: 40px;
     transform-origin: center center;
+    transition: font-size 0.2s ease;
 }
 
 svg#svg {
@@ -82,49 +83,50 @@ svg#svg {
     z-index: 1;
 }
 
+/* STILI PELLE GECO DELL'ELBA (TARENTOLA MAURITANICA) */
 .skin {
-    fill: rgba(66, 105, 48, 0.98);
-    stroke: rgba(91, 133, 66, 0.52);
+    fill: #857867;
+    stroke: #483f33;
     stroke-width: 1.15;
     stroke-linejoin: round;
 }
 
 .headSkin {
-    fill: rgb(66, 105, 48);
-    stroke: rgba(91, 133, 66, 0.6);
+    fill: #8a7c6a;
+    stroke: #483f33;
     stroke-width: 1.25;
     stroke-linejoin: round;
 }
 
 .limbSkin {
-    fill: rgba(66, 105, 48, 0.97);
-    stroke: rgba(91, 133, 66, 0.54);
+    fill: #807362;
+    stroke: #483f33;
     stroke-width: 1.05;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 .toeSkin {
-    fill: rgba(69, 108, 49, 0.98);
-    stroke: rgba(91, 133, 66, 0.48);
+    fill: #8e806e;
+    stroke: #4d4235;
     stroke-width: 0.8;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 .toePad {
-    fill: rgba(79, 119, 56, 0.99);
-    stroke: rgba(102, 145, 76, 0.48);
+    fill: #baa891;
+    stroke: #665847;
     stroke-width: 0.75;
 }
 
 .skinHighlight {
-    fill: rgba(170, 205, 120, 0.035);
+    fill: rgba(235, 220, 195, 0.05);
 }
 
 .dorsalLineGlow {
     fill: none;
-    stroke: rgba(155, 205, 104, 0.16);
+    stroke: rgba(230, 215, 190, 0.12);
     stroke-width: 4.2;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -132,14 +134,22 @@ svg#svg {
 
 .dorsalLine {
     fill: none;
-    stroke: rgba(151, 198, 101, 0.72);
+    stroke: rgba(215, 198, 172, 0.45);
     stroke-width: 1.45;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 .mottle {
-    fill: rgba(74, 45, 24, 0.40);
+    fill: #342a20;
+}
+
+.tubercle-light {
+    fill: #d2c5b0;
+}
+
+.tubercle-shadow {
+    fill: #221b14;
 }
 
 .bone, .spine, .rib {
@@ -150,15 +160,15 @@ svg#svg {
 
 .eye {
     fill: url(#eyeDepth);
-    stroke: rgba(255,220,80,0.42);
+    stroke: rgba(180, 150, 90, 0.5);
     stroke-width: 0.7;
 }
 
 .eye-reflection { fill: rgba(255,255,220,0.20); }
-.eye-glint { fill: rgba(255,255,225,0.78); }
+.eye-glint { fill: rgba(255,255,225,0.85); }
 
 .fly-idle {
-    animation: flyIdleBehavior 4s infinite ease-in-out;
+    animation: flyIdleBehavior 2.5s infinite ease-in-out;
 }
 
 @keyframes flyIdleBehavior {
@@ -172,7 +182,7 @@ svg#svg {
 }
 
 .flapping {
-    animation: buzz 0.05s infinite alternate !important;
+    animation: buzz 0.03s infinite alternate !important;
 }
 
 @keyframes buzz {
@@ -181,7 +191,7 @@ svg#svg {
 }
 
 .fly-caught {
-    animation: struggle 0.05s infinite alternate !important;
+    animation: struggle 0.03s infinite alternate !important;
 }
 
 @keyframes struggle {
@@ -190,20 +200,20 @@ svg#svg {
 }
 
 .tongueMain {
-    fill: #e96b86;
-    stroke: #b94767;
-    stroke-width: 1.15;
+    fill: #e85d75;
+    stroke: #8d1c31;
+    stroke-width: 1.6;
     stroke-linejoin: round;
 }
 
 .tongueHighlight {
-    fill: rgba(255, 180, 190, 0.45);
+    fill: rgba(255, 220, 230, 0.65);
 }
 
 .tongueTip {
-    fill: #ef7890;
-    stroke: #b94767;
-    stroke-width: 0.95;
+    fill: #d9435f;
+    stroke: #8d1c31;
+    stroke-width: 1.2;
 }
 </style>
 </head>
@@ -216,12 +226,11 @@ svg#svg {
 
 <svg id="svg" xmlns="http://www.w3.org/2000/svg">
 <defs>
-    <radialGradient id="eyeDepth" cx="28%" cy="20%" r="85%">
-        <stop offset="0%" stop-color="#fff3a0"/>
-        <stop offset="13%" stop-color="#e2c94b"/>
-        <stop offset="36%" stop-color="#aa9020"/>
-        <stop offset="65%" stop-color="#51450c"/>
-        <stop offset="100%" stop-color="#080701"/>
+    <radialGradient id="eyeDepth" cx="30%" cy="25%" r="80%">
+        <stop offset="0%" stop-color="#f5e8b5"/>
+        <stop offset="25%" stop-color="#c4af6e"/>
+        <stop offset="60%" stop-color="#73613c"/>
+        <stop offset="100%" stop-color="#1c160b"/>
     </radialGradient>
 </defs>
 <g id="gecko">
@@ -239,7 +248,20 @@ svg#svg {
 </svg>
 
 <script>
-// --- SISTEMA AUDIO SINTETIZZATO ---
+// --- TIPI DI INSETTI ---
+const INSECT_TYPES = [
+    { emoji: '🪰', freq: 220, filterFreq: 850, size: 32 },
+    { emoji: '🐝', freq: 310, filterFreq: 1200, size: 36 },
+    { emoji: '🦟', freq: 480, filterFreq: 1800, size: 24 },
+    { emoji: '🐞', freq: 150, filterFreq: 600, size: 30 },
+    { emoji: '🦋', freq: 130, filterFreq: 450, size: 38 },
+    { emoji: '🪲', freq: 180, filterFreq: 550, size: 32 },
+    { emoji: '🦗', freq: 260, filterFreq: 950, size: 34 },
+    { emoji: '🕷️', freq: 90,  filterFreq: 300, size: 28 }
+];
+let currentInsect = INSECT_TYPES[0];
+
+// --- AUDIO SYSTEM ---
 let audioCtx = null;
 let flyOsc = null, flyGain = null, flyFilter = null;
 let isMuted = false;
@@ -253,10 +275,10 @@ function initAudio() {
         flyGain = audioCtx.createGain();
 
         flyOsc.type = 'sawtooth';
-        flyOsc.frequency.value = 200;
+        flyOsc.frequency.value = currentInsect.freq;
 
         flyFilter.type = 'lowpass';
-        flyFilter.frequency.value = 750;
+        flyFilter.frequency.value = currentInsect.filterFreq;
 
         flyGain.gain.setValueAtTime(0, audioCtx.currentTime);
 
@@ -289,15 +311,16 @@ function toggleAudio() {
 function updateFlySound(state, now) {
     if (!audioCtx || !flyGain || isMuted) return;
     const t = audioCtx.currentTime;
+    const baseFreq = currentInsect ? currentInsect.freq : 220;
     
     if (state === 'spawning') {
-        const vibrato = Math.sin(now * 0.02) * 25;
-        flyOsc.frequency.setTargetAtTime(230 + vibrato, t, 0.05);
-        flyGain.gain.setTargetAtTime(0.12, t, 0.05);
+        const vibrato = Math.sin(now * 0.03) * 35;
+        flyOsc.frequency.setTargetAtTime(baseFreq + vibrato, t, 0.03);
+        flyGain.gain.setTargetAtTime(0.12, t, 0.03);
     } else if (state === 'escaping') {
-        const vibrato = Math.sin(now * 0.04) * 45;
-        flyOsc.frequency.setTargetAtTime(280 + vibrato, t, 0.03);
-        flyGain.gain.setTargetAtTime(0.18, t, 0.03);
+        const vibrato = Math.sin(now * 0.06) * 60;
+        flyOsc.frequency.setTargetAtTime(baseFreq * 1.35 + vibrato, t, 0.02);
+        flyGain.gain.setTargetAtTime(0.18, t, 0.02);
     } else { 
         flyGain.gain.setTargetAtTime(0, t, 0.03);
     }
@@ -310,21 +333,21 @@ function playSnapSound() {
     const t = audioCtx.currentTime;
 
     osc.type = 'triangle';
-    osc.frequency.setValueAtTime(380, t);
-    osc.frequency.exponentialRampToValueAtTime(35, t + 0.09);
+    osc.frequency.setValueAtTime(450, t);
+    osc.frequency.exponentialRampToValueAtTime(40, t + 0.06);
 
-    gain.gain.setValueAtTime(0.4, t);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+    gain.gain.setValueAtTime(0.45, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
 
     osc.connect(gain);
     gain.connect(audioCtx.destination);
     osc.start(t);
-    osc.stop(t + 0.09);
+    osc.stop(t + 0.06);
 }
 
 function playChewCrunch() {
     if (!audioCtx || isMuted) return;
-    const bufferSize = audioCtx.sampleRate * 0.05;
+    const bufferSize = audioCtx.sampleRate * 0.035;
     const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
     const data = buffer.getChannelData(0);
     for (let i = 0; i < bufferSize; i++) {
@@ -335,13 +358,13 @@ function playChewCrunch() {
 
     const filter = audioCtx.createBiquadFilter();
     filter.type = 'bandpass';
-    filter.frequency.value = 600 + Math.random() * 800;
+    filter.frequency.value = 700 + Math.random() * 900;
     filter.Q.value = 2.5;
 
     const gain = audioCtx.createGain();
     const t = audioCtx.currentTime;
-    gain.gain.setValueAtTime(0.25, t);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+    gain.gain.setValueAtTime(0.28, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.035);
 
     noise.connect(filter);
     filter.connect(gain);
@@ -349,7 +372,7 @@ function playChewCrunch() {
     noise.start(t);
 }
 
-// --- LOGICA ANIMAZIONE ---
+// --- DOM & ANIMATION STATE ---
 const svg = document.getElementById("svg");
 const layerToes = document.getElementById("layer-toes");
 const layerLimbs = document.getElementById("layer-limbs");
@@ -363,22 +386,23 @@ const tongueMain = document.getElementById('tongueMain');
 const tongueHighlight = document.getElementById('tongueHighlight');
 const tongueTip = document.getElementById('tongueTip');
 
-let position = 0; // Il geco parte all'inizio della pista (0.0)
-let velocity = 1.45;
+let position = 0;
+const BASE_VELOCITY = 8.0; 
+let velocity = BASE_VELOCITY;
 let gait = 0;
 
-// STATI E COMPORTAMENTO SCATTI/PAUSE DEL GECO
 let geckoBehavior = 'moving'; 
-let burstTargetGait = (3 + Math.random()) * Math.PI; 
+let burstTargetGait = Math.round((3 + Math.random() * 2)) * Math.PI; 
 let pauseStartTime = 0;
-let pauseDuration = 3500;
+let pauseDuration = 1600;
 let flickSchedule = [];
 let miniFlickActive = false;
 let miniFlickStart = 0;
-const MINI_FLICK_DURATION = 800;
 
-let flyT = 0.5; // La mosca parte dal lato opposto
-let isEscaping = false;
+const MINI_FLICK_DURATION = 1000;
+const BASE_REACH = 22;
+
+let flyT = 0.5;
 let escapeStart = 0;
 let escapeFromT = 0.5;
 let escapeTargetT = 0.5;
@@ -425,8 +449,16 @@ function createEight() {
 createEight();
 window.addEventListener("resize", createEight);
 
-// Rigenera la mosca sempre a distanza dal geco
 function startSpawn() {
+    attackCount = 0; 
+    currentInsect = INSECT_TYPES[Math.floor(Math.random() * INSECT_TYPES.length)];
+    flyInner.textContent = currentInsect.emoji;
+    flyInner.style.fontSize = currentInsect.size + 'px';
+
+    if (flyFilter) {
+        flyFilter.frequency.value = currentInsect.filterFreq;
+    }
+
     flyState = 'spawning';
     flyInner.className = 'flapping';
     fly.style.opacity = "1";
@@ -434,7 +466,6 @@ function startSpawn() {
     
     const w = window.innerWidth;
     const h = window.innerHeight;
-    
     const edge = Math.floor(Math.random() * 4);
     const margin = 60;
     
@@ -443,7 +474,6 @@ function startSpawn() {
     else if (edge === 2) { spawnStartX = Math.random() * w; spawnStartY = h + margin; }
     else { spawnStartX = -margin; spawnStartY = Math.random() * h; }
     
-    // Calcola un punto t distante dal geco (almeno 0.35 - 0.45 di differenza sul percorso)
     const geckoT = ((position % 1) + 1) % 1;
     const safeDistance = 0.35 + Math.random() * 0.1;
     flyT = (geckoT + safeDistance) % 1;
@@ -453,25 +483,26 @@ const BODY_POINTS = 65;
 const SPACING = 3.5;
 const FRONT_NODE = 8;
 const REAR_NODE = 28;
-const BODY_WIDTH = 27;
-const FRONT_UPPER = 18, FRONT_FOREARM = 14, FRONT_HAND = 12;
-const REAR_UPPER_LENGTH = 22, REAR_LOWER_LENGTH = 23, REAR_FOOT_LENGTH = 12;
-const FEMUR_OUTWARD = 0.78, KNEE_FORWARD = 7, FEMUR_SWING = 0.30;
-const FRONT_TOE_SPREAD = 1.58, REAR_TOE_SPREAD = 1.42;
-const FRONT_TOE_LENGTH = 10, REAR_TOE_LENGTH = 11;
-const TOE_PAD_RADIUS = 3.25;
-const SKIN_THICKNESS_UPPER = 7, SKIN_THICKNESS_LOWER = 6, SKIN_THICKNESS_FOOT = 4.7;
-const SHOULDER_RADIUS = 14, HIP_RADIUS = 17;
-const FRONT_STEP = 36, REAR_STEP = 42, LEG_LIFT = 18;
-const PELVIS_WIDTH = 20, PELVIS_SWAY = 2.5;
+const FRONT_UPPER = 17, FRONT_FOREARM = 14, FRONT_HAND = 11;
+const REAR_UPPER_LENGTH = 18, REAR_LOWER_LENGTH = 17, REAR_FOOT_LENGTH = 11;
+
+const FRONT_TOE_SPREAD = 1.65, REAR_TOE_SPREAD = 1.55;
+const FRONT_TOE_LENGTH = 9.5, REAR_TOE_LENGTH = 9.5;
+const TOE_PAD_RADIUS = 3.1;
+const SKIN_THICKNESS_UPPER = 6.8, SKIN_THICKNESS_LOWER = 5.8, SKIN_THICKNESS_FOOT = 4.5;
+const SHOULDER_RADIUS = 12, HIP_RADIUS = 13;
+
+const STEP_LENGTH = 30; 
+const SHOULDER_WIDTH = 17;
+const PELVIS_WIDTH = 19;
 
 const GUIDE_FRONT_RIGHT = 0;
-const GUIDE_FRONT_LEFT = Math.PI;
-const GUIDE_REAR_RIGHT = Math.PI;
-const GUIDE_REAR_LEFT = 0;
+const GUIDE_FRONT_LEFT  = Math.PI;
+const GUIDE_REAR_RIGHT  = Math.PI; 
+const GUIDE_REAR_LEFT   = 0;
 
 function getPoint(t, offset) {
-    const length = path.getTotalLength();
+    const length = path.getTotalLength() || 1000;
     let distance = t * length + offset;
     distance = ((distance % length) + length) % length;
 
@@ -496,8 +527,9 @@ function gaitGuide(phase) {
         forward = 1 - (phase / Math.PI) * 2;
         lift = 0;
     } else {
-        forward = -1 + ((phase - Math.PI) / Math.PI) * 2;
-        lift = Math.sin(((phase - Math.PI) / Math.PI) * Math.PI);
+        const flightPhase = (phase - Math.PI) / Math.PI;
+        forward = -1 + flightPhase * 2;
+        lift = Math.sin(flightPhase * Math.PI);
     }
     return { forward, lift };
 }
@@ -506,9 +538,9 @@ function drawClosedLimbSkin(base, upper, joint1, joint2, foot, isRear) {
     const widths = [
         isRear ? HIP_RADIUS : SHOULDER_RADIUS,
         SKIN_THICKNESS_UPPER,
-        isRear ? 7.5 : 6.5,
+        isRear ? 6.8 : 6.2,
         SKIN_THICKNESS_LOWER,
-        isRear ? 5.5 : 5,
+        4.8,
         SKIN_THICKNESS_FOOT
     ];
     const points = [base, upper, joint1, joint2, foot];
@@ -516,12 +548,11 @@ function drawClosedLimbSkin(base, upper, joint1, joint2, foot, isRear) {
 
     for (let i = 0; i < points.length; i++) {
         let dx = (i === 0) ? points[1].x - points[0].x : (i === points.length - 1) ? points[i].x - points[i-1].x : points[i+1].x - points[i-1].x;
-        let dy = (i === 0) ? points[1].y - points[0].y : (i === points.length - 1) ? points[i].y - points[i-1].y : points[i+1].y - points[i-1].y;
+        let dy = (i === 0) ? points[1].y - points[0].y : (i === points.length - 1) ? points[i].y - points[0].y : points[i+1].y - points[i-1].y;
         const len = Math.hypot(dx, dy) || 1;
         const nx = -dy / len, ny = dx / len;
         let width = widths[i];
-        if (i === 2) width *= 1.14;
-        if (i === 4) width *= 0.82;
+        if (i === 2) width *= 1.05;
 
         left.push({ x: points[i].x + nx * width, y: points[i].y + ny * width });
         right.push({ x: points[i].x - nx * width, y: points[i].y - ny * width });
@@ -552,17 +583,16 @@ function makeToe(fx, fy, angle, length) {
     const endY = fy + Math.sin(angle) * length;
     const midX = (startX + endX) / 2, midY = (startY + endY) / 2;
     const nx = -Math.sin(angle), ny = Math.cos(angle);
-    const width = 2.7;
+    const width = 2.6;
 
     const p1 = { x: startX + nx * width, y: startY + ny * width };
-    const p2 = { x: endX + nx * width * 0.68, y: endY + ny * width * 0.68 };
-    const p3 = { x: endX - nx * width * 0.68, y: endY - ny * width * 0.68 };
+    const p2 = { x: endX + nx * width * 0.65, y: endY + ny * width * 0.65 };
+    const p3 = { x: endX - nx * width * 0.65, y: endY - ny * width * 0.65 };
     const p4 = { x: startX - nx * width, y: startY - ny * width };
 
     return `
         <path class="toeSkin" d="M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} Q ${endX} ${endY} ${p3.x} ${p3.y} L ${p4.x} ${p4.y} Q ${midX} ${midY} ${p1.x} ${p1.y} Z"/>
         <circle class="toePad" cx="${endX}" cy="${endY}" r="${TOE_PAD_RADIUS}"/>
-        <circle cx="${endX - 0.9}" cy="${endY - 1}" r="0.75" fill="rgba(185,220,130,0.14)"/>
     `;
 }
 
@@ -588,17 +618,22 @@ function frontLeg(p, side, phase) {
     const tx = Math.cos(p.angle), ty = Math.sin(p.angle);
     const nx = -Math.sin(p.angle), ny = Math.cos(p.angle);
 
-    const hx = p.x + nx * BODY_WIDTH * side;
-    const hy = p.y + ny * BODY_WIDTH * side;
-    const move = c.forward * FRONT_STEP;
-    const lift = c.lift * LEG_LIFT;
+    const hx = p.x + nx * SHOULDER_WIDTH * side;
+    const hy = p.y + ny * SHOULDER_WIDTH * side;
 
-    const ex = hx + tx * (FRONT_UPPER + move * 0.40) + nx * side * (8 + lift * 0.25);
-    const ey = hy + ty * (FRONT_UPPER + move * 0.40) + ny * side * (8 + lift * 0.25);
-    const wx = ex + tx * FRONT_FOREARM - nx * side * lift * 0.18;
-    const wy = ey + ty * FRONT_FOREARM - ny * side * lift * 0.18;
-    const fx = wx + tx * (FRONT_HAND + move * 0.25);
-    const fy = wy + ty * (FRONT_HAND + move * 0.25);
+    const move = c.forward * (STEP_LENGTH * 0.5);
+
+    const shoulderAngle = p.angle + Math.atan2(side * 0.65, 0.35);
+    const ex = hx + Math.cos(shoulderAngle) * FRONT_UPPER;
+    const ey = hy + Math.sin(shoulderAngle) * FRONT_UPPER;
+
+    const forearmAngle = p.angle + Math.atan2(side * 0.4, 0.65);
+    const wx = ex + Math.cos(forearmAngle) * FRONT_FOREARM + tx * move;
+    const wy = ey + Math.sin(forearmAngle) * FRONT_FOREARM + ty * move;
+
+    const handAngle = p.angle + side * 0.12;
+    const fx = wx + Math.cos(handAngle) * FRONT_HAND + tx * move;
+    const fy = wy + Math.sin(handAngle) * FRONT_HAND + ty * move;
 
     return drawLeg(p.x, p.y, hx, hy, ex, ey, wx, wy, fx, fy, false, p.angle);
 }
@@ -608,44 +643,28 @@ function rearLeg(p, side, phase) {
     const tx = Math.cos(p.angle), ty = Math.sin(p.angle);
     const nx = -Math.sin(p.angle), ny = Math.cos(p.angle);
 
-    const pelvisPhase = phase + Math.PI / 2;
-    const pelvisOffset = Math.sin(pelvisPhase) * PELVIS_SWAY;
-    const hx = p.x + nx * (PELVIS_WIDTH + pelvisOffset) * side;
-    const hy = p.y + ny * (PELVIS_WIDTH + pelvisOffset) * side;
+    const hx = p.x + nx * PELVIS_WIDTH * side;
+    const hy = p.y + ny * PELVIS_WIDTH * side;
 
-    const move = c.forward * REAR_STEP;
-    const lift = c.lift * LEG_LIFT;
+    const move = c.forward * (STEP_LENGTH * 0.5);
 
-    let forwardComponent = 0.30 + c.forward * FEMUR_SWING;
-    if (side < 0) forwardComponent += c.forward * 0.24;
+    const femurAngle = p.angle + Math.atan2(side * 0.8, -0.2);
+    const kx = hx + Math.cos(femurAngle) * REAR_UPPER_LENGTH;
+    const ky = hy + Math.sin(femurAngle) * REAR_UPPER_LENGTH;
 
-    const femurAngle = p.angle + Math.atan2(side * FEMUR_OUTWARD, forwardComponent);
-    let kneeForward = KNEE_FORWARD + move * 0.18;
-    if (side < 0) kneeForward += move * 0.28;
+    const tibiaAngle = p.angle + Math.atan2(side * 0.55, -0.7);
+    const ax = kx + Math.cos(tibiaAngle) * REAR_LOWER_LENGTH + tx * move;
+    const ay = ky + Math.sin(tibiaAngle) * REAR_LOWER_LENGTH + ty * move;
 
-    const kx = hx + Math.cos(femurAngle) * REAR_UPPER_LENGTH + tx * kneeForward - nx * side * (lift * 0.18);
-    const ky = hy + Math.sin(femurAngle) * REAR_UPPER_LENGTH + ty * kneeForward - ny * side * (lift * 0.18);
-
-    const tibiaAngle = p.angle + Math.atan2(side * 0.55, -0.45 + c.forward * 0.18);
-    let ankleMove = move * 0.20;
-    if (side < 0) ankleMove += move * 0.20;
-
-    const ax = kx + Math.cos(tibiaAngle) * (REAR_LOWER_LENGTH * 0.62) + tx * ankleMove;
-    const ay = ky + Math.sin(tibiaAngle) * (REAR_LOWER_LENGTH * 0.62) + ty * ankleMove;
-
-    let footAngle = p.angle + side * 0.32;
-    if (side < 0) footAngle += c.forward * 0.18;
-    let footMove = move * 0.18;
-    if (side < 0) footMove += move * 0.26;
-
-    const fx = ax + Math.cos(footAngle) * REAR_FOOT_LENGTH + tx * footMove;
-    const fy = ay + Math.sin(footAngle) * REAR_FOOT_LENGTH + ty * footMove;
+    const footAngle = p.angle + side * 0.3;
+    const fx = ax + Math.cos(footAngle) * REAR_FOOT_LENGTH + tx * move;
+    const fy = ay + Math.sin(footAngle) * REAR_FOOT_LENGTH + ty * move;
 
     return drawLeg(p.x, p.y, hx, hy, kx, ky, ax, ay, fx, fy, true, p.angle);
 }
 
 function drawHead(head, gaitPhase) {
-    const headSway = Math.sin(gaitPhase) * 2.5; 
+    const headSway = Math.sin(gaitPhase) * 2.2; 
     const angle = (head.angle * 180 / Math.PI) + 90 + headSway;
     const S = 0.76;
 
@@ -654,8 +673,8 @@ function drawHead(head, gaitPhase) {
     
     if (chewing) {
         const t = performance.now() - chewStart;
-        j = Math.max(0, Math.sin(t * 0.025)) * 6;
-        eyeScale = Math.max(0.15, 1 - Math.sin(t * 0.015) * 0.85);
+        j = Math.max(0, Math.sin(t * 0.08)) * 6.5; 
+        eyeScale = Math.max(0.15, 1 - Math.sin(t * 0.04) * 0.85);
     }
     const n = j * 0.6; 
 
@@ -675,6 +694,8 @@ function drawHead(head, gaitPhase) {
     `;
 
     const eyeRadius = 4.7 * eyeScale;
+    const pupilRx = 0.95 * eyeScale;
+    const pupilRy = 4.1 * eyeScale;
     const glintOp = eyeScale > 0.5 ? 1 : 0;
 
     const headHTML = `
@@ -687,10 +708,12 @@ function drawHead(head, gaitPhase) {
     const eyesHTML = `
         <g transform="translate(${head.x}, ${head.y}) rotate(${angle})">
             <circle class="eye" cx="${-21*S}" cy="${-25*S}" r="${eyeRadius}"/>
+            <ellipse cx="${-21*S}" cy="${-25*S}" rx="${pupilRx}" ry="${pupilRy}" fill="#080705"/>
             <ellipse class="eye-reflection" cx="${-22.2*S}" cy="${-26.4*S}" rx="${1.9*eyeScale}" ry="${1.2*eyeScale}"/>
             <circle class="eye-glint" cx="${-22.5*S}" cy="${-27*S}" r="${0.65*eyeScale}" opacity="${glintOp}"/>
 
             <circle class="eye" cx="${21*S}" cy="${-25*S}" r="${eyeRadius}"/>
+            <ellipse cx="${21*S}" cy="${-25*S}" rx="${pupilRx}" ry="${pupilRy}" fill="#080705"/>
             <ellipse class="eye-reflection" cx="${19.8*S}" cy="${-26.4*S}" rx="${1.9*eyeScale}" ry="${1.2*eyeScale}"/>
             <circle class="eye-glint" cx="${19.5*S}" cy="${-27*S}" r="${0.65*eyeScale}" opacity="${glintOp}"/>
         </g>
@@ -699,21 +722,64 @@ function drawHead(head, gaitPhase) {
     return { head: headHTML, eyes: eyesHTML };
 }
 
-function addBodySpots(t) {
+// CORREZIONE: Macchie e tubercoli sincronizzati con l'ondulazione del movimento e delimitati nei margini della sagoma
+function addBodySpots(t, gaitPhase) {
     let spots = "";
     const seed = Math.floor(t * 100000);
     function random(n) {
         const x = Math.sin(n * 12.9898 + seed) * 43758.5453;
         return x - Math.floor(x);
     }
-    for (let i = 0; i < 115; i++) {
-        const bodyIndex = 3 + random(i * 2.13) * 58;
-        const p = getPoint(t, -bodyIndex * SPACING);
-        const nx = -Math.sin(p.angle), ny = Math.cos(p.angle);
-        let bodyWidth = bodyIndex < 5 ? 8 + bodyIndex * 2 : bodyIndex > 28 ? 13 * Math.pow(1 - (bodyIndex - 28) / 37, 1.2) : 16;
-        const lateral = (random(i * 3.71) * 2 - 1) * Math.max(1.5, bodyWidth - 3.2) * 0.92;
-        spots += `<circle class="mottle" cx="${p.x + nx * lateral}" cy="${p.y + ny * lateral}" r="${0.45 + random(i * 5.17) * 0.85}" opacity="${0.25 + random(i * 7.31) * 0.24}"/>`;
+
+    // Helper per calcolare la curvatura laterale corretta nel punto esatto
+    function getLateralWave(idx) {
+        if (idx >= FRONT_NODE && idx <= REAR_NODE) {
+            const tFactor = Math.sin(((idx - FRONT_NODE) / (REAR_NODE - FRONT_NODE)) * Math.PI);
+            return Math.sin(gaitPhase) * tFactor * 4.2;
+        } else if (idx > REAR_NODE) {
+            const tailFactor = (idx - REAR_NODE) / (BODY_POINTS - REAR_NODE);
+            return Math.sin(gaitPhase - tailFactor * 2.8) * tailFactor * 6.2;
+        }
+        return 0;
     }
+
+    // 1. Bande trasversali mimetiche
+    for (let b = 4; b < BODY_POINTS - 2; b += 5) {
+        const pRaw = getPoint(t, -b * SPACING);
+        const wave = getLateralWave(b);
+        const nx = -Math.sin(pRaw.angle), ny = Math.cos(pRaw.angle);
+        let bodyWidth = b < 5 ? 8 + b * 2 : b > 28 ? 13 * Math.pow(1 - (b - 28) / (BODY_POINTS - 28), 1.25) : 16;
+        
+        for (let k = -0.55; k <= 0.55; k += 0.38) {
+            const r = 1.4 + random(b * 1.1 + k) * 1.4;
+            const dist = k * Math.max(0, bodyWidth - r - 2.0);
+            const offsetX = pRaw.x + nx * (dist + wave);
+            const offsetY = pRaw.y + ny * (dist + wave);
+            spots += `<circle class="mottle" cx="${offsetX}" cy="${offsetY}" r="${r}" opacity="${0.42 + random(b + k) * 0.22}"/>`;
+        }
+    }
+
+    // 2. Tubercoli/Verruche 3D con margine interno rigido
+    for (let i = 0; i < 135; i++) {
+        const bodyIndex = 2 + random(i * 2.13) * 60;
+        const pRaw = getPoint(t, -bodyIndex * SPACING);
+        const wave = getLateralWave(bodyIndex);
+        
+        const nx = -Math.sin(pRaw.angle), ny = Math.cos(pRaw.angle);
+        let bodyWidth = bodyIndex < 5 ? 8 + bodyIndex * 2 : bodyIndex > 28 ? 13 * Math.pow(1 - (bodyIndex - 28) / (BODY_POINTS - 28), 1.25) : 16;
+        
+        const r = 0.65 + random(i * 5.17) * 1.0;
+        // Margine di sicurezza dal bordo per evitare qualsiasi sbordamento
+        const maxMargin = Math.max(0, bodyWidth - r - 2.8);
+        const lateral = (random(i * 3.71) * 2 - 1) * maxMargin;
+        
+        const cx = pRaw.x + nx * (lateral + wave);
+        const cy = pRaw.y + ny * (lateral + wave);
+
+        spots += `<circle class="tubercle-shadow" cx="${cx + 0.4}" cy="${cy + 0.5}" r="${r + 0.15}" opacity="0.55"/>`;
+        spots += `<circle class="tubercle-light" cx="${cx}" cy="${cy}" r="${r}" opacity="${0.62 + random(i * 3.1) * 0.35}"/>`;
+    }
+
     return spots;
 }
 
@@ -748,24 +814,24 @@ function tonguePath(mouthX, mouthY, targetX, targetY, progress = 1) {
     const ex = mouthX + ux * reach;
     const ey = mouthY + uy * reach;
 
-    const baseW = 4.6;
-    const midW = 3.0;
-    const tipW = 1.7;
+    const baseW = 8.5;
+    const midW = 6.0;
+    const tipW = 3.5;
 
     const bx1 = mouthX + nx * baseW, by1 = mouthY + ny * baseW;
     const bx2 = mouthX - nx * baseW, by2 = mouthY - ny * baseW;
-    const mx1 = mouthX + ux * reach * 0.62 + nx * midW;
-    const my1 = mouthY + uy * reach * 0.62 + ny * midW;
-    const mx2 = mouthX + ux * reach * 0.62 - nx * midW;
-    const my2 = mouthY + uy * reach * 0.62 - ny * midW;
+    const mx1 = mouthX + ux * reach * 0.60 + nx * midW;
+    const my1 = mouthY + uy * reach * 0.60 + ny * midW;
+    const mx2 = mouthX + ux * reach * 0.60 - nx * midW;
+    const my2 = mouthY + uy * reach * 0.60 - ny * midW;
     const tx1 = ex + nx * tipW, ty1 = ey + ny * tipW;
     const tx2 = ex - nx * tipW, ty2 = ey - ny * tipW;
 
-    const fork = Math.min(7, 2.5 + reach * 0.08);
-    const split1x = ex + ux * fork + nx * 2.5;
-    const split1y = ey + uy * fork + ny * 2.5;
-    const split2x = ex + ux * fork - nx * 2.5;
-    const split2y = ey + uy * fork - ny * 2.5;
+    const fork = Math.min(12, 4 + reach * 0.12);
+    const split1x = ex + ux * fork + nx * 4.5;
+    const split1y = ey + uy * fork + ny * 4.5;
+    const split2x = ex + ux * fork - nx * 4.5;
+    const split2y = ey + uy * fork - ny * 4.5;
 
     return {
         main: `M ${bx1} ${by1}
@@ -773,12 +839,12 @@ function tonguePath(mouthX, mouthY, targetX, targetY, progress = 1) {
                L ${ex} ${ey}
                L ${tx2} ${ty2}
                Q ${mx2} ${my2} ${bx2} ${by2} Z`,
-        highlight: `M ${mouthX + nx*1.4} ${mouthY + ny*1.4}
-                    Q ${mouthX + ux*reach*0.55 + nx*1.0} ${mouthY + uy*reach*0.55 + ny*1.0}
-                      ${ex + nx*0.55} ${ey + ny*0.55}`,
+        highlight: `M ${mouthX + nx*2.5} ${mouthY + ny*2.5}
+                    Q ${mouthX + ux*reach*0.55 + nx*2.0} ${mouthY + uy*reach*0.55 + ny*2.0}
+                      ${ex + nx*1.2} ${ey + ny*1.2}`,
         tip: `M ${ex} ${ey}
               L ${split1x} ${split1y}
-              L ${ex + nx*0.35} ${ey + ny*0.35}
+              L ${ex + nx*0.8} ${ey + ny*0.8}
               L ${split2x} ${split2y} Z`,
         tipPoint: { x: ex, y: ey }
     };
@@ -816,15 +882,32 @@ function startMiniFlick(now) {
 function updateMiniFlick(now, mouthX, mouthY, headAngle) {
     if (!miniFlickActive) return;
     const elapsed = now - miniFlickStart;
+    
     if (elapsed > MINI_FLICK_DURATION) {
         miniFlickActive = false;
         hideTongue();
         return;
     }
-    const progress = Math.sin((elapsed / MINI_FLICK_DURATION) * Math.PI);
-    const reachX = mouthX + Math.cos(headAngle) * 42;
-    const reachY = mouthY + Math.sin(headAngle) * 42;
-    showTongue(mouthX, mouthY, reachX, reachY, progress * 0.9);
+
+    let t = elapsed / MINI_FLICK_DURATION; 
+    let currentReach = 0;
+    let currentAngle = headAngle;
+
+    if (t < 0.15) {
+        currentReach = BASE_REACH * (t / 0.15);
+    } else if (t > 0.85) {
+        currentReach = BASE_REACH * ((1 - t) / 0.15);
+    } else {
+        currentReach = BASE_REACH;
+        let wiggleProgress = (t - 0.15) / 0.70;
+        let wiggleOffset = Math.sin(wiggleProgress * Math.PI * 6); 
+        currentAngle = headAngle + (wiggleOffset * 0.22);
+    }
+
+    const reachX = mouthX + Math.cos(currentAngle) * currentReach;
+    const reachY = mouthY + Math.sin(currentAngle) * currentReach;
+
+    showTongue(mouthX, mouthY, reachX, reachY, 1);
 }
 
 function escapeFly() {
@@ -838,7 +921,7 @@ function escapeFly() {
     setTimeout(() => {
         flyInner.className = 'fly-idle';
         flyState = 'idle';
-    }, 1200);
+    }, 450);
 }
 
 function animateTongueAttack(mouthX, mouthY, targetX, targetY, willEat) {
@@ -846,8 +929,8 @@ function animateTongueAttack(mouthX, mouthY, targetX, targetY, willEat) {
     velocity = 0;
     geckoBehavior = 'attacking';
 
-    const durationOut = 100;
-    const durationBack = willEat ? 380 : 200; 
+    const durationOut = 30; 
+    const durationBack = willEat ? 110 : 60; 
     const start = performance.now();
 
     function tick(now) {
@@ -901,24 +984,28 @@ function animateTongueAttack(mouthX, mouthY, targetX, targetY, willEat) {
                             return;
                         }
                         playChewCrunch();
-                    }, 180);
+                    }, 65);
 
                     setTimeout(() => {
                         chewing = false;
                         tongueAnimating = false;
                         isAttacking = false;
                         geckoBehavior = 'moving';
-                        burstTargetGait = gait + (3 + Math.random()) * Math.PI;
-                        startSpawn(); 
-                    }, 1800);
+                        burstTargetGait = Math.round((gait / Math.PI) + 3 + Math.random() * 2) * Math.PI;
+
+                        setTimeout(() => {
+                            startSpawn(); 
+                        }, 3000);
+
+                    }, 500);
                 } else {
                     escapeFly();
                     setTimeout(() => {
                         tongueAnimating = false;
                         isAttacking = false;
                         geckoBehavior = 'moving';
-                        burstTargetGait = gait + (3 + Math.random()) * Math.PI;
-                    }, 1200);
+                        burstTargetGait = Math.round((gait / Math.PI) + 3 + Math.random() * 2) * Math.PI;
+                    }, 400);
                 }
             }
         }
@@ -939,7 +1026,7 @@ function animate(now) {
     updateFlySound(flyState, now);
 
     if (flyState === 'escaping') {
-        const escapeDuration = 1200;
+        const escapeDuration = 450;
         const elapsed = now - escapeStart;
         const progress = Math.min(1, elapsed / escapeDuration);
         const eased = 1 - Math.pow(1 - progress, 2);
@@ -954,7 +1041,7 @@ function animate(now) {
     
     if (flyState === 'spawning') {
         const spawnElapsed = now - spawnStart;
-        let progress = spawnElapsed / 2200; 
+        let progress = spawnElapsed / 700; 
         if (progress >= 1) {
             progress = 1;
             flyState = 'idle';
@@ -975,7 +1062,7 @@ function animate(now) {
         let offsetX = 0;
         let offsetY = 0;
         if (flyState === 'escaping') {
-            const wave = Math.sin((now - escapeStart) * 0.015) * 18 * (1 - (now - escapeStart) / 1200);
+            const wave = Math.sin((now - escapeStart) * 0.04) * 18 * (1 - (now - escapeStart) / 450);
             const pNext = getPoint(flyT + 0.01, 0);
             const angle = Math.atan2(pNext.y - flyPoint.y, pNext.x - flyPoint.x);
             offsetX = -Math.sin(angle) * wave;
@@ -1015,17 +1102,22 @@ function animate(now) {
                 willEat
             );
         } else if (geckoBehavior === 'moving') {
-            velocity = 1.45;
+            const remainingGait = burstTargetGait - gait;
+            const decelZone = Math.PI * 0.8;
+
+            if (remainingGait < decelZone) {
+                const factor = Math.max(0.05, remainingGait / decelZone);
+                velocity = BASE_VELOCITY * Math.sin(factor * Math.PI * 0.5);
+            } else {
+                velocity = BASE_VELOCITY;
+            }
+
             if (gait >= burstTargetGait) {
                 geckoBehavior = 'paused';
+                velocity = 0;
                 pauseStartTime = now;
-                pauseDuration = 3500 + Math.random() * 500; 
-                
-                flickSchedule = [];
-                const numFlicks = 2 + Math.floor(Math.random() * 2); 
-                for (let f = 1; f <= numFlicks; f++) {
-                    flickSchedule.push(now + (pauseDuration * (f / (numFlicks + 1))));
-                }
+                pauseDuration = 1600;
+                flickSchedule = [now + 100];
             }
         } else if (geckoBehavior === 'paused') {
             velocity = 0; 
@@ -1037,7 +1129,7 @@ function animate(now) {
 
             if (now - pauseStartTime >= pauseDuration && !miniFlickActive) {
                 geckoBehavior = 'moving';
-                burstTargetGait = gait + (3 + Math.random()) * Math.PI; 
+                burstTargetGait = Math.round((gait / Math.PI) + 3 + Math.random() * 2) * Math.PI; 
             }
         }
     }
@@ -1046,11 +1138,10 @@ function animate(now) {
         updateMiniFlick(now, mouthX, mouthY, head.angle);
     }
 
-    const stepDelta = velocity * dt * 0.4;
-    position += stepDelta;
-
     const pathTotalLength = path.getTotalLength() || 1000;
-    gait += (stepDelta * pathTotalLength) / 22; 
+    const stepDelta = (velocity * dt * 35) / pathTotalLength;
+    position += stepDelta;
+    gait += (stepDelta * pathTotalLength) / STEP_LENGTH * Math.PI;
 
     let bodyPointsData = [];
     for (let i = 0; i <= BODY_POINTS; i++) {
@@ -1058,10 +1149,10 @@ function animate(now) {
 
         if (i >= FRONT_NODE && i <= REAR_NODE) {
             const tFactor = Math.sin(((i - FRONT_NODE) / (REAR_NODE - FRONT_NODE)) * Math.PI);
-            lateralWave = Math.sin(gait) * tFactor * 4.8;
+            lateralWave = Math.sin(gait) * tFactor * 4.2;
         } else if (i > REAR_NODE) {
             const tailFactor = (i - REAR_NODE) / (BODY_POINTS - REAR_NODE);
-            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.8;
+            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.2;
         }
 
         const pRaw = getPoint(t, -i * SPACING);
@@ -1093,10 +1184,10 @@ function animate(now) {
         let lateralWave = 0;
         if (i >= FRONT_NODE && i <= REAR_NODE) {
             const tFactor = Math.sin(((i - FRONT_NODE) / (REAR_NODE - FRONT_NODE)) * Math.PI);
-            lateralWave = Math.sin(gait) * tFactor * 4.8;
+            lateralWave = Math.sin(gait) * tFactor * 4.2;
         } else if (i > REAR_NODE) {
             const tailFactor = (i - REAR_NODE) / (BODY_POINTS - REAR_NODE);
-            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.8;
+            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.2;
         }
 
         const pRaw = getPoint(t, -i * SPACING);
@@ -1122,10 +1213,10 @@ function animate(now) {
         let lateralWave = 0;
         if (i >= FRONT_NODE && i <= REAR_NODE) {
             const tFactor = Math.sin(((i - FRONT_NODE) / (REAR_NODE - FRONT_NODE)) * Math.PI);
-            lateralWave = Math.sin(gait) * tFactor * 4.8;
+            lateralWave = Math.sin(gait) * tFactor * 4.2;
         } else if (i > REAR_NODE) {
             const tailFactor = (i - REAR_NODE) / (BODY_POINTS - REAR_NODE);
-            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.8;
+            lateralWave = Math.sin(gait - tailFactor * 2.8) * tailFactor * 6.2;
         }
 
         const pRaw = getPoint(t, -i * SPACING);
@@ -1142,7 +1233,7 @@ function animate(now) {
 
     let bodyHTML = `
         <path class="skin" d="${skinPathData}"/>
-        ${addBodySpots(t)}
+        ${addBodySpots(t, gait)}
         ${drawDorsalLine(bodyPointsData)}
         ${innerSkeletonHTML}
     `;
@@ -1163,4 +1254,4 @@ requestAnimationFrame(animate);
 </script>
 
 </body>
-  </html>
+</html>
